@@ -1,0 +1,464 @@
+/* ── OhMyPass 插件样式 ── */
+
+/* ── 通用 ── */
+.ohmypass-modal {
+  max-width: 500px;
+}
+
+.ohmypass-modal-desc {
+  color: var(--text-muted);
+  font-size: 0.9em;
+  margin-bottom: 1em;
+}
+
+.ohmypass-error {
+  color: var(--text-error);
+  font-size: 0.85em;
+  min-height: 1.2em;
+  margin: 0.5em 0;
+}
+
+/* ── 主视图 ── */
+.ohmypass-view {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* 锁定状态 */
+.ohmypass-locked {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 8px;
+}
+
+.ohmypass-lock-icon {
+  font-size: 3em;
+  opacity: 0.5;
+}
+
+.ohmypass-hint {
+  color: var(--text-muted);
+  font-size: 0.85em;
+}
+
+.ohmypass-locked {
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.ohmypass-locked:hover {
+  opacity: 0.7;
+}
+
+.ohmypass-unlock-link {
+  color: var(--text-muted);
+  font-size: 0.85em;
+  margin-top: 8px;
+}
+
+/* 工具栏 */
+.ohmypass-toolbar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.ohmypass-search-wrapper {
+  flex: 1;
+  min-width: 150px;
+}
+
+.ohmypass-search {
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  font-size: 0.9em;
+}
+
+.ohmypass-search:focus {
+  border-color: var(--interactive-accent);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--interactive-accent-hover);
+}
+
+.ohmypass-btn-group {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* 按钮 */
+.ohmypass-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-secondary);
+  color: var(--text-normal);
+  cursor: pointer;
+  font-size: 0.85em;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.ohmypass-btn:hover {
+  background: var(--background-modifier-hover);
+  border-color: var(--interactive-accent);
+}
+
+.ohmypass-btn-primary {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border-color: var(--interactive-accent);
+}
+
+.ohmypass-btn-primary:hover {
+  background: var(--interactive-accent-hover);
+}
+
+.ohmypass-btn-danger {
+  color: var(--text-error);
+  border-color: var(--text-error);
+}
+
+.ohmypass-btn-danger:hover {
+  background: var(--text-error);
+  color: var(--text-on-accent);
+}
+
+.ohmypass-btn-sm {
+  padding: 3px 8px;
+  font-size: 0.8em;
+}
+
+.ohmypass-icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 4px;
+  color: var(--text-muted);
+  transition: color 0.15s, background 0.15s;
+}
+
+.ohmypass-icon-btn:hover {
+  color: var(--text-normal);
+  background: var(--background-modifier-hover);
+}
+
+/* 标签栏 */
+.ohmypass-tag-bar {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.ohmypass-tag-label {
+  font-size: 0.85em;
+  color: var(--text-muted);
+  margin-right: 4px;
+}
+
+.ohmypass-tag-chip {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  background: var(--background-secondary);
+  color: var(--text-muted);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.15s;
+}
+
+.ohmypass-tag-chip:hover {
+  background: var(--background-modifier-hover);
+  color: var(--text-normal);
+}
+
+.ohmypass-tag-chip.active {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border-color: var(--interactive-accent);
+}
+
+/* 服务分组 */
+.ohmypass-group {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.ohmypass-group-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: var(--background-secondary);
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s;
+}
+
+.ohmypass-group-header:hover {
+  background: var(--background-modifier-hover);
+}
+
+.ohmypass-group-header.expanded {
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.ohmypass-group-chevron {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+}
+
+.ohmypass-group-name {
+  font-weight: 600;
+  color: var(--text-normal);
+}
+
+.ohmypass-group-count {
+  font-size: 0.8em;
+  padding: 1px 8px;
+  border-radius: 10px;
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  flex-shrink: 0;
+}
+
+.ohmypass-group-preview {
+  color: var(--text-muted);
+  font-size: 0.8em;
+  margin-left: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.ohmypass-group-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.ohmypass-group-body .ohmypass-card {
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.ohmypass-group-body .ohmypass-card:last-child {
+  border-bottom: none;
+}
+
+.ohmypass-group-body .ohmypass-card:hover {
+  box-shadow: none;
+  background: var(--background-modifier-hover);
+}
+
+/* 密码卡片 */
+.ohmypass-entry-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ohmypass-load-more {
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  text-align: center;
+  flex-shrink: 0;
+  color: var(--interactive-accent);
+  border: 1px dashed var(--interactive-accent);
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85em;
+  transition: background 0.15s;
+}
+
+.ohmypass-load-more:hover {
+  background: var(--background-modifier-hover);
+}
+
+.ohmypass-card {
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  padding: 12px;
+  min-height: 60px;
+  flex-shrink: 0;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.ohmypass-card:hover {
+  border-color: var(--interactive-accent);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.ohmypass-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.ohmypass-card-name {
+  font-size: 1em;
+  color: var(--text-normal);
+}
+
+.ohmypass-card-tags {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.ohmypass-tag-badge {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-size: 0.75em;
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  opacity: 0.85;
+}
+
+.ohmypass-card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.ohmypass-card-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9em;
+}
+
+.ohmypass-card-icon {
+  width: 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.ohmypass-pw-display {
+  font-family: var(--font-monospace);
+  background: var(--background-primary);
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+
+.ohmypass-card-notes {
+  margin-top: 4px;
+  padding-top: 4px;
+  border-top: 1px dashed var(--background-modifier-border);
+}
+
+.ohmypass-note-text {
+  color: var(--text-muted);
+  font-size: 0.85em;
+}
+
+.ohmypass-card-actions {
+  display: flex;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+.ohmypass-card-time {
+  text-align: right;
+  color: var(--text-faint);
+  margin-top: 4px;
+}
+
+/* 空状态 */
+.ohmypass-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  gap: 8px;
+}
+
+.ohmypass-empty-icon {
+  font-size: 2.5em;
+  opacity: 0.4;
+}
+
+.ohmypass-empty p {
+  color: var(--text-muted);
+}
+
+/* 状态栏 */
+.ohmypass-status {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0 0;
+  border-top: 1px solid var(--background-modifier-border);
+  font-size: 0.8em;
+  color: var(--text-muted);
+  margin-top: auto;
+}
+
+.ohmypass-status-unlock {
+  color: var(--text-success);
+}
+
+/* 标签建议（Modal 中） */
+.ohmypass-tag-suggestions {
+  margin-top: -8px;
+  margin-bottom: 12px;
+  padding: 8px;
+  background: var(--background-secondary);
+  border-radius: 6px;
+}
+
+.ohmypass-tag-suggestions small {
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.ohmypass-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+/* 修改密码区域 */
+.ohmypass-change-pw {
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  background: var(--background-secondary);
+}

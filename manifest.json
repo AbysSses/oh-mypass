@@ -1,0 +1,9 @@
+{
+  "id": "ohmypass",
+  "name": "OhMyPass",
+  "version": "1.0.0",
+  "minAppVersion": "1.0.0",
+  "description": "本地化加密密码备忘录，安全存储和管理你的密码。",
+  "author": "hcyang",
+  "isDesktopOnly": false
+}
